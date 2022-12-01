@@ -60,7 +60,7 @@ The model is evaluated on the
 [IEEE CIS fraud dataset](https://www.kaggle.com/c/ieee-fraud-detection/data) from
 the Kaggle competition. The evaluation code is organized in the following three notebooks:
 
-* `01-Prepare-Data.ipynb` Download the dataset, and create training and test splits. 
+* [`01-Prepare-Data.ipynb`](01-Prepare-Data.ipynb) Download the dataset, and create training and test splits. 
 We only use competition's training data in our evaluation, since only these transactions have fraud labels.
 We sort transactions by timestamp (`TransactionDT`) column and use 80% of transactions for training, while
 the last 20% of transactions are used for testing.
@@ -69,7 +69,7 @@ the last 20% of transactions are used for testing.
 * [`02-Train-Fraud-RGCN.ipynb`](02-Train-Fraud-RGCN.ipynb) Train the model in inductive and transductive modes. We train each model five times.
 
 
-* `03-Predict-Fraud-RGCN.ipynb` Evaluate trained models and plot model performance (ROC AUC) for different 
+* [`03-Predict-Fraud-RGCN.ipynb`](03-Predict-Fraud-RGCN.ipynb) Evaluate trained models and plot model performance (ROC AUC) for different 
 k-hop values with `k=[1,2,3]`. Also, use inductive models to predict on test transactions in batches of ~1000 transactions,
 plot model performance and average latency.
 
