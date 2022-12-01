@@ -17,8 +17,20 @@ transactions in `train_transactions` DataFrame. Default model parameters can be 
 by passing them in a dictionary `params`. When array `test_mask` is passed, it is used to 
 identify test transactions in `train_transactions`, and the model will be trained in
 transductive mode by masking out fraud labels of test transactions identified with `True` values 
-in `test_mask`. 
-Default model parameters:
+in `test_mask`. Default model parameters are provided below.
+
+* `predict(test_transactions, k=2)` Model inference. Returns fraud probabilities
+for transactions in `test_transactions` DataFrame. Parameter `k` is passed to
+`dgl.khop_out_subgraph` and controls number of hops used when extracting subgraph
+around target nodes from `test_transactions`.
+
+
+* `save_fg(model_dir)` Model serialization. Saves model to a directory.
+ 
+
+* `load_fg(model_dir)` Model deserialization. Loads model from a directory.
+
+* Default model parameters:
 ```python
 {
     'num_gpus': 0,
@@ -40,16 +52,6 @@ Default model parameters:
 }
 ```
 
-* `predict(test_transactions, k=2)` Model inference. Returns fraud probabilities
-for transactions in `test_transactions` DataFrame. Parameter `k` is passed to
-`dgl.khop_out_subgraph` and controls number of hops used when extracting subgraph
-around target nodes from `test_transactions`.
-
-
-* `save_fg(model_dir)` Model serialization. Saves model to a directory.
- 
-
-* `load_fg(model_dir)` Model deserialization. Loads model from a directory.
 
 
 ## Model Evaluation
