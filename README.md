@@ -1,10 +1,10 @@
-## RGCN Fraud Detector
+# RGCN Fraud Detector
 
-# Install Prerequisites
+## Install Prerequisites
 
 `pip install -r requirements.txt`
 
-# Model Class
+## Model Class
 
 `FraudRGCN` class in `rgcn-fraud-detector/fgnn/fraud_detector.py` 
 implements model for supervised fraud detection using Relational 
@@ -52,7 +52,7 @@ around target nodes from `test_transactions`.
 * `load_fg(model_dir)` Model deserialization. Loads model from a directory.
 
 
-# Model Evaluation
+## Model Evaluation
 
 The model is evaluated on the 
 [IEEE CIS fraud dataset](https://www.kaggle.com/c/ieee-fraud-detection/data) from
