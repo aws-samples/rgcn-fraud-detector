@@ -6,7 +6,7 @@
 
 ## Model Class
 
-`FraudRGCN` class in `rgcn-fraud-detector/fgnn/fraud_detector.py` 
+`FraudRGCN` class in [`fgnn/fraud_detector.py`](fgnn/fraud_detector.py) 
 implements model for supervised fraud detection using Relational 
 Graph Convolutional Network (RGCN). The model is implemented with PyTorch
 and Deep Graph Library. Class methods support full lifecycle of the
