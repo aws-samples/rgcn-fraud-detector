@@ -66,7 +66,7 @@ We sort transactions by timestamp (`TransactionDT`) column and use 80% of transa
 the last 20% of transactions are used for testing.
 
 
-* `02-Train-Fraud-RGCN.ipynb` Train the model in inductive and transductive modes. We train each model five times.
+* [`02-Train-Fraud-RGCN.ipynb`](02-Train-Fraud-RGCN.ipynb) Train the model in inductive and transductive modes. We train each model five times.
 
 
 * `03-Predict-Fraud-RGCN.ipynb` Evaluate trained models and plot model performance (ROC AUC) for different 
