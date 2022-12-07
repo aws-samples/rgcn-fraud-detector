@@ -1,5 +1,7 @@
+torch~=1.11.0
 dgl
-torch
 pandas
+numpy
 scikit-learn
 kaggle
+seaborn
