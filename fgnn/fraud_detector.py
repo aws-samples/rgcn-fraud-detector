@@ -45,6 +45,8 @@ class FraudRGCN:
             'predict: copy embedding':[],
             'predict: inference':[],
             'predict: total':[],
+            'predict: full-graph num nodes': [],
+            'predict: sub-graph num nodes': [],
         }
 
         ### defaul model parameters
@@ -96,6 +98,8 @@ class FraudRGCN:
 
         test_features = test_g.nodes['target'].data['features']
         test_features = test_features.to(device)
+
+        train_n_nodes = th.sum(th.tensor([self._train_g.number_of_nodes(n_type) for n_type in self._train_g.ntypes]))
 
         test_n_nodes = th.sum(th.tensor([test_g.number_of_nodes(n_type) for n_type in test_g.ntypes]))
         test_n_edges = th.sum(th.tensor([test_g.number_of_edges(e_type) for e_type in test_g.etypes]))
@@ -154,6 +158,9 @@ class FraudRGCN:
                 del self._nodes_lookup[ntype][new_val]
 
         t5 = time.time()
+
+        self._timings['predict: full-graph num nodes'].append(train_n_nodes)
+        self._timings['predict: sub-graph num nodes'].append(test_n_nodes)
 
         self._timings['predict: extend graph'].append(t2-t1)
         self._timings['predict: extract subgraph'].append(t3-t2)
