@@ -65,7 +65,7 @@ The following model parameters control graph construction from a DataFrame with 
 
 
 
-## Model Evaluation
+## Model Evaluation and Deployment
 
 The model is evaluated on the 
 [IEEE CIS fraud dataset](https://www.kaggle.com/c/ieee-fraud-detection/data) from
@@ -84,6 +84,7 @@ the last 20% of transactions are used for testing.
 k-hop values with `k=[1,2,3]`. Also, use inductive models to predict on test transactions in batches of ~1000 transactions,
 plot model performance and average latency.
 
+* [`04-SM-Deploy-RGCN.ipynb`](04-SM-Deploy-RGCN.ipynb) Train RGCN model as a SageMaker estimator and deploy it to an endpoint for inference. 
 
 ## Security
 
