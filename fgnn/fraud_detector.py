@@ -18,9 +18,14 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder, OrdinalEncoder,
 from sklearn.compose import make_column_transformer
 from sklearn.preprocessing import FunctionTransformer
 
-from .pytorch_model import HeteroRGCN
-
-from .model_train_utils import train_fg, normalize_test, normalize_train, encode_node_ids, x_plus_log10
+try:
+    # use relative import when running code inside notebook
+    from .pytorch_model import HeteroRGCN
+    from .model_train_utils import train_fg, normalize_test, normalize_train, encode_node_ids, x_plus_log10
+except ImportError:
+    # use this import when running code inside SageMaker estimator
+    from pytorch_model import HeteroRGCN
+    from model_train_utils import train_fg, normalize_test, normalize_train, encode_node_ids, x_plus_log10
 
 import torch as th
 
